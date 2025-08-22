@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Products — Toy Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse Vinayagar and Golu Set products." />
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="bar">
+        <a class="back" href="index.html">Home</a>
+        <h1>Products</h1>
+      </div>
+
+      <div class="controls">
+        <div class="row">
+          <select id="category">
+            <option value="">All Categories</option>
+            <option value="Vinayagar">Vinayagar</option>
+            <option value="Golu Set">Golu Set</option>
+          </select>
+
+          <input id="search" type="search" placeholder="Search name..." />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="count" class="count"></div>
+    <section id="grid" class="grid"></section>
+    <div id="empty" class="empty" style="display:none">No products found.</div>
+  </main>
+
+  <footer class="wrap footer">
+    <small>© 2025 Toy Shop</small>
+  </footer>
+
+  <script>
+    // Stub data for development; later replace with fetch('data/catalog.json')
+    const STUB = [
+      {
+        id: 'vinayagar/vinayagar-001',
+        category: 'Vinayagar',
+        name: 'Vinayagar Idol Small',
+        image: 'products/vinayagar/images/vinayagar-001.webp'
+      },
+      {
+        id: 'vinayagar/vinayagar-002',
+        category: 'Vinayagar',
+        name: 'Vinayagar Idol Medium',
+        image: 'products/vinayagar/images/vinayagar-002.webp'
+      },
+      {
+        id: 'golu-set/golu-001',
+        category: 'Golu Set',
+        name: 'Golu Step Set 3-Tier',
+        image: 'products/golu-set/images/golu-001.webp'
+      },
+      {
+        id: 'golu-set/golu-002',
+        category: 'Golu Set',
+        name: 'Golu Dolls Pack',
+        image: 'products/golu-set/images/golu-002.webp'
+      }
+    ];
+
+    const els = {
+      category: document.getElementById('category'),
+      search: document.getElementById('search'),
+      grid: document.getElementById('grid'),
+      count: document.getElementById('count'),
+      empty: document.getElementById('empty')
+    };
+
+    let ALL = [];
+    let FILTERED = [];
+
+    function createCard(p) {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = 'product.html?id=' + encodeURIComponent(p.id);
+      a.setAttribute('aria-label', p.name);
+
+      const fig = document.createElement('figure');
+      const img = document.createElement('img');
+      img.src = p.image;
+      img.alt = p.name;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.onerror = () => { img.src = 'assets/placeholder.webp'; };
+      fig.appendChild(img);
+
+      const body = document.createElement('div');
+      body.className = 'body';
+
+      const name = document.createElement('div');
+      name.className = 'name';
+      name.textContent = p.name || 'Unnamed';
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.textContent = p.category || '';
+
+      const btn = document.createElement('div');
+      btn.className = 'btn';
+      btn.textContent = 'View';
+
+      body.appendChild(name);
+      body.appendChild(meta);
+      body.appendChild(btn);
+
+      a.appendChild(fig);
+      a.appendChild(body);
+
+      return a;
+    }
+
+    function render() {
+      els.grid.innerHTML = '';
+      FILTERED.forEach((p) => els.grid.appendChild(createCard(p)));
+      els.count.textContent = FILTERED.length + ' items';
+      els.empty.style.display = FILTERED.length ? 'none' : 'block';
+    }
+
+    function applyFilters() {
+      const q = els.search.value.trim().toLowerCase();
+      const cat = els.category.value;
+      FILTERED = ALL.filter((p) => {
+        const matchesCat = cat ? p.category === cat : true;
+        const matchesQ = q ? (p.name || '').toLowerCase().includes(q) : true;
+        return matchesCat && matchesQ;
+      });
+      render();
+    }
+
+    async function init() {
+      try {
+        // Replace this stub with a fetch later:
+        // const res = await fetch('data/catalog.json', { cache: 'no-store' });
+        // const data = await res.json();
+        const data = STUB;
+
+        ALL = data.map((p) => ({
+          id: String(p.id),
+          category: p.category || '',
+          name: p.name || '',
+          image: p.image || 'assets/placeholder.webp'
+        }));
+        FILTERED = ALL.slice();
+
+        render();
+
+        els.category.addEventListener('change', applyFilters);
+        els.search.addEventListener('input', applyFilters);
+      } catch (e) {
+        els.empty.style.display = 'block';
+        els.empty.textContent = 'Failed to load products.';
+        console.error(e);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
