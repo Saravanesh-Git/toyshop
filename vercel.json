@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/products", "destination": "/products.html" },
-    { "source": "/big", "destination": "/big.html?id=:id" },
+    { "source": "/big/:id", "destination": "/big.html?id=:id" },
     { "source": "/index", "destination": "/index.html" }
 
   ]
