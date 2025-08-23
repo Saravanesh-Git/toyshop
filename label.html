@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Catalog Labeling Page</title>
+  <title>Label Catalog Products</title>
   <link rel="stylesheet" href="label.css">
 </head>
 <body>
-  <div id="label-container">
-    <div id="image-box">
-      <img id="product-image" src="" alt="Product image">
+  <div id="label-app">
+    <div id="progress"></div>
+    <div class="image-box">
+      <img id="product-image" src="" alt="Product image" />
     </div>
-    <div id="label-form">
-      <input type="text" id="label-input" placeholder="Enter product name or label">
-      <button id="save-btn">Save Label</button>
+    <div class="label-input-box">
+      <input type="text" id="label-input" placeholder="Enter product name/label here" autocomplete="off" />
+      <button id="save-btn">Save</button>
       <button id="next-btn">Next</button>
     </div>
-    <div id="progress"></div>
+    <div id="info"></div>
   </div>
   <script src="label.js"></script>
 </body>

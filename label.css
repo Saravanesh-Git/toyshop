@@ -1,59 +1,69 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f9f9f9;
+  background: #f7f8fa;
 }
 
-#label-container {
-  max-width: 360px;
-  margin: 60px auto;
-  padding: 24px;
+#label-app {
+  max-width: 380px;
+  margin: 50px auto;
+  padding: 20px;
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.07);
 }
 
-#image-box {
+.image-box {
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 #product-image {
-  width: 240px;
+  width: 260px;
   height: 180px;
   object-fit: contain;
-  border: 1px solid #eee;
-  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafcfd;
 }
 
-#label-form {
-  text-align: center;
+.label-input-box {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
 #label-input {
-  width: 200px;
+  width: 180px;
   padding: 8px;
-  margin-right: 8px;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+  border: 1px solid #bbb;
+  font-size: 15px;
 }
 
 #save-btn, #next-btn {
   padding: 8px 16px;
-  margin: 4px;
-  background: #2196f3;
+  background: #3498db;
   color: #fff;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 #save-btn:hover, #next-btn:hover {
-  background: #1769aa;
+  background: #217dbb;
 }
 
 #progress {
-  margin-top: 16px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #636363;
   text-align: center;
-  color: #555;
+}
+
+#info {
+  text-align: center;
+  margin-top: 7px;
+  color: #298f4c;
 }
