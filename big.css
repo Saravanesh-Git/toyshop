@@ -35,18 +35,3 @@ body {
   font-size: 1.2em;
   font-weight: 600;
 }
-
-.close {
-  color: white;
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-}
-
-.close:hover {
-  color: #bbb;
-}
