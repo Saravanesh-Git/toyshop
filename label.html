@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Label Catalog Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="label.css">
 </head>
 <body>
@@ -12,10 +13,13 @@
       <img id="product-image" src="" alt="Product image" />
     </div>
     <div class="label-input-box">
-      <input type="text" id="label-input" placeholder="Enter product name/label here" autocomplete="off" />
+      <input type="text" id="label-input" placeholder="Enter product name" autocomplete="off" />
+    </div>
+    <div class="buttons">
       <button id="save-btn">Save</button>
       <button id="next-btn">Next</button>
     </div>
+    <button id="export-btn">Export JSON</button>
     <div id="info"></div>
   </div>
   <script src="label.js"></script>
