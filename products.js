@@ -14,7 +14,7 @@ let FILTERED = [];
 function createCard(p) {
   const a = document.createElement('a');
   a.className = 'card';
-  a.href = 'big.html?id=' + encodeURIComponent(p.id);
+  a.href = 'big?id=' + encodeURIComponent(p.id);
   a.setAttribute('aria-label', p.name);
 
   const fig = document.createElement('figure');
