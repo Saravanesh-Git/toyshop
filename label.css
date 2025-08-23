@@ -20,13 +20,13 @@
 /* Responsive: full box width on mobile */
 @media (max-width: 500px) {
   #label-app {
-    max-width: 98vw;
-    padding: 8vw 3vw;
+    max-width: 300vw;
+    padding: 12vw 10vw;
     box-sizing: border-box;
   }
   #product-image {
-    width: 98vw;
+    width: 400vw;
     max-width: 98vw;
-    max-height: 370px;
+    max-height: 600px;
   }
 }
