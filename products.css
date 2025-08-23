@@ -18,8 +18,7 @@ body {
   padding: 0;
 }
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-    Helvetica, Arial;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Helvetica, Arial;
   background: var(--bg);
   color: var(--text);
 }
@@ -56,7 +55,7 @@ a {
 }
 h1 {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* Controls */
@@ -73,42 +72,48 @@ h1 {
 select,
 input[type='search'] {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #fff;
+  font-size: 1rem;
 }
 
 /* Info */
 .count {
   color: var(--muted);
   margin: 8px 0 12px;
+  font-size: 16px;
 }
 
 /* Grid */
 .grid {
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(2, 1fr); /* Fixed 2 columns */
-  padding: 0 12px;
+  gap: 18px;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  padding: 0 8px;
 }
 
-/* On very small screens (< 360px), use 1 column for usability */
-@media (max-width: 359px) {
+/* On extra small screens (<440px), use 1 column for usability */
+@media (max-width: 440px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  .card {
+    margin: 0 auto;
   }
 }
 
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+
 .card figure {
   margin: 0;
   aspect-ratio: 1/1;
@@ -117,35 +122,51 @@ input[type='search'] {
   align-items: center;
   justify-content: center;
 }
+
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  min-height: 160px;
+  max-height: 220px;
   display: block;
+  border-bottom: 1px solid var(--border);
 }
+
 .body {
-  padding: 10px;
+  padding: 16px 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
+
 .name {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.13rem;
+  letter-spacing: 0.01em;
 }
+
 .meta {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
 }
+
 .btn {
   display: inline-block;
   text-align: center;
-  padding: 10px 12px;
+  padding: 12px 16px;
+  margin-top: 4px;
+  font-size: 17px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #f8fafc;
   cursor: pointer;
+  font-weight: 500;
   user-select: none;
+}
+
+.btn:active {
+  background: #e5e7eb;
 }
 
 /* Empty/footers */
@@ -153,11 +174,13 @@ input[type='search'] {
   color: var(--muted);
   text-align: center;
   padding: 24px 12px;
+  font-size: 17px;
 }
 .footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
-  margin-top: 16px;
+  margin-top: 18px;
+  font-size: 16px;
 }
 
 /* Laptop tweaks */
@@ -167,5 +190,8 @@ input[type='search'] {
   }
   .row {
     grid-template-columns: 240px 1fr;
+  }
+  .grid {
+    gap: 26px;
   }
 }
