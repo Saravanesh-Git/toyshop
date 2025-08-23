@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+#label-container {
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+
+#image-box {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+#product-image {
+  width: 240px;
+  height: 180px;
+  object-fit: contain;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+#label-form {
+  text-align: center;
+}
+
+#label-input {
+  width: 200px;
+  padding: 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#save-btn, #next-btn {
+  padding: 8px 16px;
+  margin: 4px;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#save-btn:hover, #next-btn:hover {
+  background: #1769aa;
+}
+
+#progress {
+  margin-top: 16px;
+  text-align: center;
+  color: #555;
+}
