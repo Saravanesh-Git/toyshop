@@ -1,184 +1,171 @@
 :root {
-  --bg: #fffdfa;
-  --brand: #eab308;      /* yellow */
-  --brand-dark: #cca700;
-  --accent: #fff3c0;     /* light yellow */
-  --border: #ffe484;
-  --highlight: #e91e63;  /* pink for tiny accents */
+  --bg: #fff;
   --text: #212121;
-  --muted: #756a21;
+  --muted: #707070;
+  --border: #eee;
+  --accent: #1565c0;
+  --accent-light: #f4f7fa;
+  --nav-bg: #fff;
+  --nav-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
 
 body {
   margin: 0;
+  padding: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Segoe UI", system-ui, "Roboto", "Arial", sans-serif;
+  font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 .navbar {
-  background: var(--brand);
-  box-shadow: 0 2px 12px rgba(234,179,8,0.13);
-  border-bottom: 2px solid var(--brand-dark);
+  background: var(--nav-bg);
+  box-shadow: var(--nav-shadow);
+  border-bottom: 1px solid var(--border);
   padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-
 .nav-wrap {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 0 16px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 53px;
+  align-items: center;
+  padding: 4px 10px;
+  max-width: 480px;
+  margin: 0 auto;
 }
-
 .nav-logo {
-  font-weight: 900;
-  font-size: 1.30em;
-  color: var(--brand-dark);
-  letter-spacing: .05em;
+  font-weight: 700;
+  font-size: 1.13em;
+  letter-spacing: .04em;
 }
-
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
-
 .nav-link {
   color: var(--text);
   text-decoration: none;
-  font-size: 1.09em;
   font-weight: 600;
-  padding: 7px 16px;
-  border-radius: 9px;
+  font-size: 1em;
+  padding: 7px 12px;
+  border-radius: 7px;
   transition: background 0.18s;
 }
-
 .nav-link.active,
 .nav-link:hover {
-  background: var(--accent);
-  color: var(--brand-dark);
+  background: var(--accent-light);
+  color: var(--accent);
 }
 
-.hero {
-  background: var(--accent);
-  border-bottom: 1.9px solid var(--border);
-  padding-top: 18px;
-  padding-bottom: 24px;
+.banner-section {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0 5px 0;
 }
-
-.hero-content {
-  max-width: 620px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 14px;
-}
-
 .shop-banner {
-  width: 95%;
-  max-width: 450px;
+  width: 90vw;
+  max-width: 380px;
   border-radius: 18px;
-  border: 2px solid var(--brand-dark);
-  margin: 16px auto 18px;
+  box-shadow: 0 2px 12px 2px #eee;
   display: block;
-  box-shadow: 0 8px 22px rgba(234,179,8,0.08);
 }
 
-.shop-title {
-  font-family: "Noto Sans Tamil", "Segoe UI", system-ui, sans-serif;
-  font-size: 2.3em;
+/* Main details section */
+.maindetails {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 18px 12px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: center;
+}
+.title {
+  font-size: 1.6em;
   font-weight: 800;
-  color: var(--brand-dark);
-  margin-bottom: 7px;
+  margin-top: 2px;
+  color: var(--accent);
 }
-
-.subtitle {
+.tagline {
   font-size: 1.10em;
-  color: var(--highlight);
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.highlight {
+  font-size: 1em;
+  color: var(--muted);
   margin-bottom: 10px;
 }
 
-.shop-desc {
-  font-size: 1.13em;
-  margin-bottom: 5px;
-  color: var(--text);
-  background: #fcf9ec;
-  border-radius: 8px;
-  padding: 8px 16px;
-  display: inline-block;
-  border: 1.2px solid var(--border);
+.contact-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
-
-.info-section {
-  background: #fffefa;
-  padding: 30px 4px 40px;
-  border-bottom: 2px solid var(--border);
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 1em;
+  justify-content: center;
 }
-
-.info-wrap {
-  max-width: 620px;
-  margin: 0 auto;
-  padding: 0 14px;
+.icon {
+  font-size: 1.17em;
+  color: #2e7d32;
 }
-
-.section-heading {
-  font-size: 1.2em;
-  font-weight: 700;
-  margin-bottom: 11px;
-  letter-spacing: 0.04em;
-}
-
-.shop-list {
-  list-style: disc inside;
-  margin: 8px 0 24px;
-  padding-left: 0;
-}
-.shop-list li {
-  font-size: 1.08em;
-  margin-bottom: 7px;
+.contact-main {
+  font-size: 1em;
   color: var(--text);
   font-weight: 500;
 }
-
-.address-box {
-  background: #fffde7;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  font-size: 1.08em;
-  color: var(--muted);
-  padding: 18px 20px;
-  box-shadow: 0 2px 10px rgba(226,181,8,.05);
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+}
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
-.address-box strong {
-  color: var(--brand-dark);
-  font-weight: 700;
+.catalog-explore {
+  margin: 35px 0 18px 0;
+  text-align: center;
+}
+.catalog-link {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.12em;
+  padding: 13px 32px;
+  border-radius: 13px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(21,101,192,.09);
+  transition: background 0.16s;
+}
+.catalog-link:hover {
+  background: #0d47a1;
 }
 
 .footer {
-  background: var(--brand);
-  color: var(--brand-dark);
-  padding: 14px 0 9px;
-  border-top: 2px solid var(--brand-dark);
-}
-
-.footer-wrap {
-  max-width: 640px;
-  margin: 0 auto;
+  margin-top: 12px;
+  background: var(--nav-bg);
+  color: var(--muted);
   text-align: center;
-}
-.footer small {
-  font-size: 1.07em;
-  font-weight: 600;
-  letter-spacing: .03em;
+  border-top: 1px solid var(--border);
+  padding: 12px 0 7px;
+  font-size: 0.98em;
 }
 
-@media (max-width: 420px) {
-  .nav-links { gap: 9px;}
-  .nav-logo { font-size: 1em;}
-  .shop-banner { max-width: 98vw;}
-  .info-wrap, .hero-content { padding: 0 2vw;}
-  .address-box { padding: 13px 8px;}
+@media (max-width: 480px) {
+  .nav-wrap { max-width: 99vw; }
+  .shop-banner { max-width: 99vw; }
+  .maindetails { max-width: 98vw; }
 }
