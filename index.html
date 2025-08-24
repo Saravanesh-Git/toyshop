@@ -1,62 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="ta">
 <head>
   <meta charset="utf-8">
-  <title>Toy Shop — Temp Home</title>
+  <title>Sriram Toy Shop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Temporary home page for navigation during development.">
-  <style>
-    :root{
-      --bg:#ffffff; --text:#111827; --muted:#6b7280;
-      --brand:#ef4444; --brand-600:#dc2626; --border:#e5e7eb;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial;
-         background:var(--bg); color:var(--text)}
-    header,footer{padding:12px 16px; border-bottom:1px solid var(--border)}
-    footer{border-top:1px solid var(--border); border-bottom:none; color:var(--muted)}
-    .wrap{max-width:640px; margin:0 auto; padding:16px}
-    h1{font-size:22px; margin:8px 0 16px}
-    p{color:var(--muted); margin:0 0 16px}
-    .grid{display:grid; gap:12px}
-    .btn{
-      display:block; width:100%;
-      text-align:center; text-decoration:none;
-      background:var(--brand); color:#fff;
-      padding:14px 16px; border-radius:12px; font-weight:600;
-    }
-    .btn:hover{background:var(--brand-600)}
-    .btn.secondary{background:#f3f4f6; color:#111827}
-    .note{font-size:14px; color:var(--muted); margin-top:8px}
-  </style>
+  <meta name="description" content="Traditional devotional toy shop for Golu dolls and Vinayagar idols in Madurai.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <strong>Toy Shop</strong> — Temporary Home
+  <nav class="navbar">
+    <div class="nav-wrap">
+      <div class="nav-logo">ஸ்ரீ ராம் பொம்மkai</div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="catalog" class="nav-link">Catalog</a>
+        <a href="about" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <img class="shop-banner" src="banner.jpg" alt="Sri Ram Bommai Kadai Banner">
+      <h1 class="shop-title">ஸ்ரீ ராம் பொம்மை கடை</h1>
+      <div class="subtitle">உரிமையாளர் S. கிரிஜா</div>
+      <div class="shop-desc">
+        <strong>இங்கு கொலு பொம்மைகள், விநாயகர் சிலைகள் மாத்த விலையில் கிடைக்கும்!</strong>
+      </div>
     </div>
   </header>
 
-  <main class="wrap">
-    <h1>Navigation (Dev Only)</h1>
-    <p>This is a temporary landing page for development. Use the links below to open working pages.</p>
-
-    <div class="grid" style="margin-top:16px">
-      <!-- Public pages -->
-      <a class="btn" href="products">Open Products</a>
-      <a class="btn secondary" href="product?id=demo">Open Product (Demo)</a>
-
-      <!-- Owner / internal tools -->
-      <a class="btn secondary" href="label">Open Label Page (Owner Only)</a>
+  <section class="info-section">
+    <div class="info-wrap">
+      <h2 class="section-heading" style="color:#cca700">Shop Highlights</h2>
+      <ul class="shop-list">
+        <li>Traditional Golu Dolls</li>
+        <li>Vinayagar Idols & Statues</li>
+        <li>Samaya Karuppu, Sothana Swamy, Sri Kavery Appan</li>
+        <li>Rare devotional collections</li>
+        <li>Affordable prices for all items</li>
+      </ul>
+      <h2 class="section-heading" style="color:#cca700; margin-top:32px;">Contact & Address</h2>
+      <div class="address-box">
+        <p>
+          <strong>Address:</strong> <br>
+          <span>வெளார் தெரு பெருமாள் கோவில் அருகில், விலாச்சேரி, மதுரை — 06</span>
+        </p>
+        <p>
+          <strong>WhatsApp:</strong> <br>
+          <span style="font-size:1.08em; color:#1faa09">99944 20568</span> <br>
+          <span style="font-size:1.08em; color:#1faa09">88704 27403</span>
+        </p>
+      </div>
     </div>
+  </section>
 
-    <p class="note">Replace this page later with the real home UI.</p>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <small>© 2025 Toy Shop</small>
+  <footer class="footer">
+    <div class="footer-wrap">
+      <small>© 2025 Sriram Toy Shop • Madurai</small>
     </div>
   </footer>
 </body>
