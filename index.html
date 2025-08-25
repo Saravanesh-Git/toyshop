@@ -1,58 +1,599 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Sriram Toy Shop — Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Sriram Toy Shop, Madurai - Wholesale devotional dolls, Vinayagar statues, and more at low prices.">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sriram Toy Shop - Toys for Every Child's Imagination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Mobile-First Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 95%;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .tagline {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #ff6b6b;
+        }
+        
+        .contact-info i {
+            margin-right: 5px;
+            font-size: 1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 107, 107, 0.8), rgba(255, 107, 107, 0.8)), url('https://images.unsplash.com/photo-1560972550-aba3b6c55d2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .hero-content h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1rem;
+            max-width: 100%;
+            margin: 0 auto 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #ff6b6b;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Shop Banner Section */
+        .shop-banner {
+            padding: 30px 0;
+            background-color: #fff;
+        }
+        
+        .banner-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 50px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #ff6b6b;
+            border-radius: 2px;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            order: 2;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .contact-details {
+            margin-bottom: 25px;
+        }
+        
+        .contact-details p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .contact-details i {
+            font-size: 1.1rem;
+            color: #ff6b6b;
+            margin-right: 10px;
+            margin-top: 5px;
+            width: 20px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .map-container {
+            order: 1;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #ff6b6b;
+        }
+        
+        .footer-logo p {
+            color: #bdc3c7;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #34495e;
+            color: #ecf0f1;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #ff6b6b;
+        }
+        
+        .footer-links {
+            margin-bottom: 25px;
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: #ff6b6b;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 5px;
+        }
+        
+        .footer-links ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #ff6b6b;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive Design for Larger Screens */
+        @media (min-width: 768px) {
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            
+            .logo {
+                margin-bottom: 0;
+            }
+            
+            .contact-info {
+                flex-wrap: nowrap;
+            }
+            
+            .contact-info a {
+                margin-left: 15px;
+            }
+            
+            .hero {
+                min-height: 60vh;
+                padding: 50px 20px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+                max-width: 700px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2:after {
+                width: 80px;
+                height: 4px;
+            }
+            
+            .contact-container {
+                flex-direction: row;
+                gap: 50px;
+            }
+            
+            .contact-info {
+                order: 1;
+            }
+            
+            .contact-info h3 {
+                text-align: left;
+                font-size: 1.8rem;
+            }
+            
+            .map-container {
+                order: 2;
+                height: 400px;
+            }
+            
+            .whatsapp-btn {
+                width: auto;
+            }
+            
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            
+            .footer-logo {
+                text-align: left;
+                flex: 1;
+                min-width: 300px;
+            }
+            
+            .footer-links {
+                flex: 1;
+                min-width: 200px;
+                margin-bottom: 30px;
+            }
+            
+            .footer-links h3 {
+                text-align: left;
+            }
+            
+            .footer-links h3:after {
+                left: 0;
+                transform: none;
+            }
+            
+            .footer-links ul {
+                justify-content: flex-start;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero-content h2 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-wrap">
-      <span class="nav-logo">Sriram Toy Shop</span>
-      <div class="nav-links">
-        <a href="/" class="nav-link active">Home</a>
-        <a href="about" class="nav-link">About</a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <!-- Banner -->
-    <section class="banner-section">
-      <img src="banner.jpeg" alt="Sriram Toy Shop Banner" class="shop-banner">
-    </section>
-
-    <section class="maindetails">
-      <div class="title">Sriram Toy Shop</div>
-      <div class="tagline">Wholesale Golu Dolls & Vinayagar Statues</div>
-      <div class="highlight">Offering devotional dolls and idols at wholesale and lowest prices.</div>
-      <div class="contact-list">
-        <div class="contact-row">
-          <span class="icon">&#x1F4CD;</span> <!-- Location pin emoji -->
-          <span class="contact-main">Velar street near by Subam Ball company and Perumal Temple, Vilacheri, Madurai - 06.</span>
-          <a href="https://maps.app.goo.gl/DL64SazjohHiyo5g9" target="_blank" class="icon-btn" title="Open in Google Maps">
-            <img src="geo-alt.svg" alt="Google Maps Icon">
-          </a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <div>
+                    <h1>Sriram Toy Shop</h1>
+                    <div class="tagline">Toys for Every Child's Imagination</div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                <a href="mailto:info@sriramtoys.com"><i class="fas fa-envelope"></i> info@sriramtoys.com</a>
+            </div>
         </div>
-        <div class="contact-row">
-          <span class="icon">&#x1F4DE;</span> <!-- Phone emoji -->
-          <span class="contact-main">99944 20568 / 88704 27403</span>
-          <a href="https://wa.me/919994420568" target="_blank" class="icon-btn" title="WhatsApp">
-            <img src="whatsapp.svg" alt="WhatsApp">
-          </a>
-        </div>
-      </div>
-    </section>
-    
-    <section class="catalog-explore">
-      <a href="products" class="catalog-link">Explore our Product Catalog &rarr;</a>
-    </section>
-  </main>
+    </header>
 
-  <footer class="footer">
-    <small>© 2025 Sriram Toy Shop, Madurai</small>
-  </footer>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Welcome to Sriram Toy Shop</h2>
+            <p>Discover a magical world of toys that spark imagination, creativity, and endless fun for children of all ages.</p>
+            <a href="catalog.html" class="btn">Explore Our Catalog</a>
+        </div>
+    </section>
+
+    <!-- Shop Banner Section -->
+    <section class="shop-banner">
+        <div class="container">
+            <div class="banner-container">
+                <img src="https://images.unsplash.com/photo-1581579438747-6999aa87b194?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sriram Toy Shop Banner" class="banner-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Visit Our Store</h2>
+            </div>
+            <div class="contact-container">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.997410503828!2d80.2707!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjciTiA4MMKwMTYnMTQuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Toy Street, Chennai, Tamil Nadu 600001</p>
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@sriramtoys.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10:00 AM - 8:00 PM, Sun: 11:00 AM - 6:00 PM</p>
+                    </div>
+                    <a href="https://wa.me/919876543210?text=Hi%20Sriram%20Toy%20Shop!%20I'm%20interested%20in%20your%20toys." class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Sriram Toy Shop</h2>
+                    <p>Bringing joy to children since 1995 with quality toys that inspire imagination and creativity.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="catalog.html">Our Catalog</a></li>
+                        <li><a href="#">Special Offers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Educational Toys</a></li>
+                        <li><a href="#">Board Games</a></li>
+                        <li><a href="#">Action Figures</a></li>
+                        <li><a href="#">Dolls & Plush</a></li>
+                        <li><a href="#">Outdoor Toys</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Sriram Toy Shop. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
